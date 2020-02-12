@@ -1,10 +1,10 @@
-# Get started with cloud-native on the open Java stack 
+## Get started with cloud-native on the open Java stack 
 
-## Abstract
+### Abstract
 
 Have a go at developing a cloud-native microservice on a fully open source and open standards stack. Use the Eclipse MicroProfile programming model to develop a robust and flexible microservice. Deploy it to the Open Liberty server running on the Eclipse OpenJ9 JVM.  Handle microservice metrics and alerting with MicroProfile Metrics and Health.  Finally, build and run the application in a Docker container ready for deployment to your favorite cloud.
 
-## Introduction
+### Introduction
 
 Cloud-native is an approach to application development and deployment.  It's the product of a number of industry movements over the past 10-15 years - agile development practices, DevOps, Microservices and Cloud.  Cloud-native applications are developed using agile practices, use continuous integration/continuous delivery to streamline deployment, are architected around team-aligned microservices, and leverage the cloud for rapid deployment at scale.
 
@@ -19,7 +19,7 @@ Before you begin, open a Terminal via 'Terminal' -> 'New Terminal' and run the f
 
 `cd SkillsNetworkLabs`
 
-### 1. A look at OpenJ9 and AdoptOpenJDK
+## 1. A look at OpenJ9 and AdoptOpenJDK
 
 <a href="http://www.eclipse.org/openj9/">OpenJ9</a> is an Eclipse open source JVM. It resulted from the contribution of IBM's JVM implementation to Eclipse and so has many years of high-volume, high-availability production use behind it. Its
 low footprint, fast startup and high throughput characteristics make it an ideal choice for cloud-native applications - if you pay for your cloud by memory footprint, this is going to be important to you.
@@ -40,7 +40,7 @@ OMR      - 7a1b0239a
 JCL      - da35e0c380 based on jdk-11.0.6+10)
 ```
 
-### 2. Build a cloud-native microservice 
+## 2. Build a cloud-native microservice 
 
 This tutorial comes with a pre-build Microservice for you to study and extend.
 
@@ -68,13 +68,13 @@ The response should look like:
 }
 ```
 
-### 3. A look at MicroProfile
+## 3. A look at MicroProfile
 
 <a href="http://microprofile.io">MicroProfile</a> is a set of industry specifications for developing Cloud-native applications. At its foundation are a small number of Java EE specifications; JAX-RS, CDI and JSON-P, which are then augmented with technologies addressing the needs of Cloud-native applications.  
 
 The tutorial code shows example use of MicroProfile Health and Metrics.  
 
-### MicroProfile Health
+## MicroProfile Health
 
 When you started Open Liberty, it wrote out a number of available endpoints.  One of those is the health endpoint for the application:
 
@@ -201,7 +201,7 @@ Access the service endpoint to cause some application measurements to be recorde
 These measurements will be available at the `/metrics` endpoint, but you can also just see the application metrics at: 
 `curl --insecure https://localhost:9443/metrics/application`
 
-### MicroProfile Config
+## MicroProfile Config
 
 Externalizing configuration is one of the key tenets of <a href="https://12factor.net/">12-factor applications</a>. Externalizing everything that varies between deployments into configuration means you can build once and deploy in the many stages of your DevOps pipeline, thus removing the risk of your application changing between deployments and invalidating previous testing.  
 
@@ -345,11 +345,11 @@ Stop the server by entering `q` in the terminal.
 
 There are additional annotations available to help you document the parameters and more.
 
-### Further Reading
+## Further Reading
 
 MicroProfile has many other important capabilities, such as a type-safe REST client, and fault tolerance (the ability to gracefully handle failures in service dependencies).  Visit the <a href="https://openliberty.io/guides/?search=MicroProfile&key=tag">Open Liberty MicroProfile Guides</a> for more details and deeper dives into what we've covered here.
 
-### 5. Containerization (Docker)
+## 5. Containerization (Docker)
 
 Docker has rapidly become the containerization technology of choice for deploying cloud-native applications. All major cloud vendors support Docker, including IBM Cloud and IBM Cloud Private. 
 
@@ -367,7 +367,7 @@ The project's maven pom file includes a maven profile for building a usr package
 
 This results in a server zip package: `target/defaultServer.zip`.  In the `usr-package` build we also use the name `defaultServer` for the server because this is the name of the server the base Liberty Docker images automatically runs when the container is started.
 
-### Build and run in Docker
+## Build and run in Docker
 
 In the directory where the `Dockerfile` is located run:
 
