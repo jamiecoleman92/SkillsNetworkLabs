@@ -74,7 +74,7 @@ The response should look like:
 
 The tutorial code shows example use of MicroProfile Health and Metrics.  
 
-## MicroProfile Health
+### MicroProfile Health
 
 When you started Open Liberty, it wrote out a number of available endpoints.  One of those is the health endpoint for the application:
 
@@ -201,7 +201,7 @@ Access the service endpoint to cause some application measurements to be recorde
 These measurements will be available at the `/metrics` endpoint, but you can also just see the application metrics at: 
 `curl --insecure https://localhost:9443/metrics/application`
 
-## MicroProfile Config
+### MicroProfile Config
 
 Externalizing configuration is one of the key tenets of <a href="https://12factor.net/">12-factor applications</a>. Externalizing everything that varies between deployments into configuration means you can build once and deploy in the many stages of your DevOps pipeline, thus removing the risk of your application changing between deployments and invalidating previous testing.  
 
@@ -251,7 +251,7 @@ You should now see:
 
 This example shows static config injection, where the configuration is read at server start-up.  MicroProfile and Open Liberty also support dynamic configuration injection which means the configuration is re-read periodically (e.g. every 500ms) and so does not require a server restart.
 
-#### MicroProfile OpenAPI
+### MicroProfile OpenAPI
 
 When you started Open Liberty it wrote out two endpoints for MicroProfile OpenAPI:
 
@@ -349,7 +349,7 @@ There are additional annotations available to help you document the parameters a
 
 MicroProfile has many other important capabilities, such as a type-safe REST client, and fault tolerance (the ability to gracefully handle failures in service dependencies).  Visit the <a href="https://openliberty.io/guides/?search=MicroProfile&key=tag">Open Liberty MicroProfile Guides</a> for more details and deeper dives into what we've covered here.
 
-## 5. Containerization (Docker)
+## 4. Containerization (Docker)
 
 Docker has rapidly become the containerization technology of choice for deploying cloud-native applications. All major cloud vendors support Docker, including IBM Cloud and IBM Cloud Private. 
 
@@ -367,7 +367,7 @@ The project's maven pom file includes a maven profile for building a usr package
 
 This results in a server zip package: `target/defaultServer.zip`.  In the `usr-package` build we also use the name `defaultServer` for the server because this is the name of the server the base Liberty Docker images automatically runs when the container is started.
 
-## Build and run in Docker
+### Build and run in Docker
 
 In the directory where the `Dockerfile` is located run:
 
